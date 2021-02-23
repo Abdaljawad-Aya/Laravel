@@ -1,0 +1,25 @@
+@extends('product/layout')
+@section('content')
+<h2 style="margin-top:12px;" class="text-center"> Add Product</h2>
+<br>
+<form action="{{ route('products.store') }} method
+post" name="add_product">
+{{ csrf_field() }}
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <strong>Title</strong>
+        <input type="text" name="title" class="form-control" placeholder="Enter title">
+
+        <span class="text-danger">{{ $errors->first('title')}}</span>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="form-group">
+            <strong>Product Code</strong>
+            <input type="text" name="product_code" class="form-control">
+        </div>
+    </div>
+</div>
+</form>
